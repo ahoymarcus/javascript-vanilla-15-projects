@@ -2,48 +2,27 @@
 
 <br />
 
-O projeto utiliza um Envent Listener do JavaScript para monitorar cliques num botao e assim chamar as devidas funções necessárias para a mudança da cor de background do elemento 'body' da página.
+O projeto utiliza um Envent Listener do JavaScript para monitorar cliques num botao e assim chamar as devidas funções necessárias para fazer a mudança da cor de background do elemento 'body' da página HTML.
 
 <br />
 
 
-#### React Project (the 15 Projects) - Freecodecamp.org
+#### Vanilla Projects (the 15 Projects) -  canal Coding Addict
 
-Conjunto de projetos de frontend inspirados na apresentação do professor **Johm Smilga** para aprofundar no conhecimento do framework React-JS e JavaScript.:[^1]
-
-<br />
-
-[]()
-
-<br />
-
-### I:
-
-![Imagem da página Home do Cocktails App](/public/images/)
-
-<br />
-
-### I:
-
-![Imagem da pagina /about construída com o pacote React-router-dom](/public/images/)
-
-<br />
-
-### I:
-
-![Imagem do sistema de busca feito na API de dados](/public/images/)
-
-<br />
-
-### I:
-
-![Imagem da pagina /cocktail/:id construída com o pacote React-router-dom](/public/images/)
+Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm Smilga** para aprofundar no conhecimento da linguagem.:[^1]
 
 
 <br />
 
+### Imagem do App Color-Flip:
+
+![Imagem do App Color-Flip](/public/images/javascript-vanilla-color-fliper-01.png)
+
+<br />
+
+
 <br />
 <br />
 
-[^1]:freecodecamp.org - John Smilga 
+[^1]:Coding Addict - John Smilga 
 
