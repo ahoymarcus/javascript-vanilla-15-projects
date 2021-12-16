@@ -1,9 +1,19 @@
-# Javascript Projects
+# Javascript Vanilla _ 15 projects  
 
-#### Support
+<br />
 
-Find the Content Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
 
-## You can see all projects in action here
+#### Vanilla Projects (the 15 Projects) -  canal Coding Addict
 
-[Projects](https://www.vanillajavascriptprojects.com/)
+Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm Smilga** para aprofundar no conhecimento da linguagem.:[^1]
+
+
+
+<br />
+
+
+<br />
+<br />
+
+[^1]:Coding Addict - John Smilga 
+

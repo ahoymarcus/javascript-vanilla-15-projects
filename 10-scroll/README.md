@@ -1,4 +1,4 @@
-# Color Flipper App - JavaScript Vanilla  
+# Color Flipper App - Vanilla JS  
 
 <br />
 
