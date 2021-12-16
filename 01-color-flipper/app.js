@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 0 hs  1'  20''
+// 0 hs  18'  20''
 const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
 
 const btn = document.getElementById('btn');
@@ -22,8 +22,6 @@ btn.addEventListener('click', function() {
 function getRandomNumber(interval) {
 	return Math.floor(Math.random() * interval);
 };
-
-
 
 
 
