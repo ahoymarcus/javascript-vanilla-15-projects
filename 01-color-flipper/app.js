@@ -9,7 +9,7 @@ const color = document.querySelector('.color');
 btn.addEventListener('click', function() {
 	//console.log(document.body);
 	
-	// get random number between 0 - 3
+	// get random number
 	const randomNumber = getRandomNumber(colors.length);
 	console.log(randomNumber);
 	
