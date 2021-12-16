@@ -9,12 +9,9 @@ const color = document.querySelector('.color');
 
 btn.addEventListener('click', function() {
 	let hexColor = '#';
-	let randomNumber;
 	
 	for (let i=0; i < 6; i++) {
-		randomNumber = getRandomValue(hex.length);
-		
-		hexColor += hex[randomNumber];
+		hexColor += hex[getRandomValue(hex.length)];
 	}
 	
 	console.log(hexColor);
