@@ -6,8 +6,6 @@ const btns = document.querySelectorAll('.btn');
 
 
 
-
-
 // carefull: a node list
 console.log(btns);
 
@@ -22,22 +20,26 @@ btns.forEach(function(btn) {
 		const styles = e.currentTarget.classList;
 		
 		if (styles.contains('decrease')) {
-			count -= 1;
-			console.log(count);
-			
-			htmlValue.textContent = count;
+			count -= 1;	
 		} else if (styles.contains('reset')) {
 			count = 0;
-			console.log(count);
-			
-			htmlValue.textContent = count;
 		} else if (styles.contains('increase')) {
 			count += 1;
-			console.log(count);
-			
-			htmlValue.textContent = count;
 		}
 		
+		if (count > 0) {
+			htmlValue.style.color = 'green';
+		}
+		if (count < 0) {
+			htmlValue.style.color = 'red';
+		}
+		if (count == 0) {
+			htmlValue.style.color = '#222';
+		}
+		
+		console.log(count);
+		
+		htmlValue.textContent = count;
 	});
 	
 	
