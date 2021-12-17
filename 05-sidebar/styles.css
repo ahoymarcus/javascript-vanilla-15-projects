@@ -247,9 +247,16 @@ Sidebar
   row-gap: 1rem;
   box-shadow: var(--clr-red-dark);
   transition: var(--transition);
-  /* transform: translate(-100%); */
+  
+	/*
+		Nesta propriedade o Sidebar é empurrado para a esquerda, 100%, sumindo da tela.
+	*/
+	transform: translate(-100%); 
 }
 .show-sidebar {
+	/*
+		Já aqui, o Sidebar é trazido de volta para a posição normal, reaparecendo na tela.
+	*/
   transform: translate(0);
 }
 @media screen and (min-width: 676px) {
