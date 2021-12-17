@@ -9,13 +9,15 @@ const closeBtn = document.querySelector('.close-btn');
 
 
 
-// open-modal
+// CSS class: open-modal
 modalBtn.addEventListener('click', function() {
 	console.log(modalOverlay.classList);
 	modalOverlay.classList.add('open-modal');
 });
 
-
+closeBtn.addEventListener('click', function() {
+	modalOverlay.classList.remove('open-modal');
+});
 
 
 

@@ -7,7 +7,7 @@ const closeBtn = document.querySelector('.close-btn');
 
 
 
-//show-sidebar
+// CSS class: show-sidebar
 sideBarToggle.addEventListener('click', function() {
 	//console.log(sidebar.classList);
 	const cssClassTest = sidebar.classList.contains('show-sidebar');
