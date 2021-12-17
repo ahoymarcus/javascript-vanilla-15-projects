@@ -58,34 +58,17 @@ let currentItem = 0;
 window.addEventListener('DOMContentLoaded', function() {
 	console.log('Testing DOMContentLoaded Event Listener.....');
 	
-	showPerson(currentItem)
-});
-
-
-// show next person
-nextBtn.addEventListener('click', function() {
-	currentItem += 1;
-	
-	showPerson(currentItem);
-});
-
-// show prev person
-prevBtn.addEventListener('click', function() {
-	currentItem -= 1;
-	
-	showPerson(currentItem);
-});
-
-
-// show person based on item
-function showPerson(personIndex) {
-	const item = reviews[personIndex];
+	const item = reviews[currentItem];
 	console.log(item);
 		
 	img.src = item.img;
 	author.textContent = item.name;
 	job.textContent = item.job;
 	info.textContent = item.text;
-};
+});
+
+
+
+
 
 
