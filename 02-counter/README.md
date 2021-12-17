@@ -16,9 +16,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App Color-Flip:
+### Imagem da tela do Counter App:
 
-![Imagem do App Color-Flip](/public/images/javascript-vanilla-counter-01.png)
+![Imagem da tela do Counter App](/public/images/javascript-vanilla-counter-01.png)
 
 <br />
 
