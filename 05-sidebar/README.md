@@ -2,20 +2,13 @@
 
 <br />
 
-O projeto de dados de um array local para que o app possa renderizar as informações de usuários nas postagens da página web. 
+Esse pequeno projeto cria um app que faz referências a elementos de links na página web e testa o elemento com relação à presença da classe CSS capaz de apresentar ou tirar de visibilidade o elemento de menu. 
 
 <br />
 
-Como funcionalidade especial, antes de se ter a leitura do script com os eventos de botão da página, o app usa o Event Listener 'DOMContentLoaded' para garantir que os dados sendo recebidos já foram carregados no objeto Window do browser.
-
-<br />
-
-Isto serve inclusive para simular casos de requisições assíncronas de dados, por exemplo, de APIs.
+Assim, no clique de um botão, dependendo do teste, se a classe CSS não estiver presente, a classe é inserida dinamicamente na estrutura HTML e o elemento é mostrado, mas se o teste for positivo e a classe já estiver lá, o app retira a classe fazendo o menu ser fechado.
 
 
-<br />
-
-Finalmente, são feitas todas as validações para garantir que a renderização condicional da página não extrapole o tamanho dos dados sendo acessados.
 
 <br />
 
