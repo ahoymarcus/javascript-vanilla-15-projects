@@ -27,7 +27,92 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 ![Imagem das postagens no Reviews App](/public/images/javascript-vanilla-reviews-01.png)
 
-<br />>
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />  
+
+
+### Projeto 0 - I:
+
+![Imagem das postagens no Reviews App](/public/images/)
+
+<br />
 
 
 <br />
