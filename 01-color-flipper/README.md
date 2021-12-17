@@ -16,7 +16,7 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 ### Imagem do App Color-Flip:
 
-![Imagem do App Color-Flip](/public/images/javascript-vanilla-color-fliper-01.png)
+![Imagem do App Color-Flip](/javascript-vanilla-color-fliper-01.png)
 
 <br />
 
