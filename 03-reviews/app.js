@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 0 hs  53'  34''
+// 1 hs  07'  34''
 
 // local reviews data
 const reviews = [
@@ -64,14 +64,22 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // show next person
 nextBtn.addEventListener('click', function() {
-	currentItem += 1;
+	if (currentItem >= reviews.length -1) {
+		currentItem = 0;
+	} else {
+		currentItem += 1;
+	}
 	
 	showPerson(currentItem);
 });
 
 // show prev person
 prevBtn.addEventListener('click', function() {
-	currentItem -= 1;
+	if (currentItem <= 0) {
+		currentItem = reviews.length - 1;
+	} else {
+		currentItem -= 1;
+	}
 	
 	showPerson(currentItem);
 });
