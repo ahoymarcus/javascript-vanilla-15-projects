@@ -84,6 +84,13 @@ prevBtn.addEventListener('click', function() {
 	showPerson(currentItem);
 });
 
+// show random person
+randomBtn.addEventListener('click', function() {
+	currentItem = Math.floor(Math.random() * reviews.length);
+	
+	showPerson(currentItem);
+});
+
 
 // show person based on item
 function showPerson(personIndex) {
@@ -95,5 +102,7 @@ function showPerson(personIndex) {
 	job.textContent = item.job;
 	info.textContent = item.text;
 };
+
+
 
 
