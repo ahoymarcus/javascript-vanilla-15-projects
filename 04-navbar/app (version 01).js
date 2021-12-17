@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 1 hs  25'  34''
+// 1 hs  11'  34''
 // classList - shows/gets all classes
 // contains - checks classList for specific class
 // add - add class
@@ -16,12 +16,32 @@ navToggle.addEventListener('click', function() {
 	const cssClassTest = links.classList.contains('show-links');
 	console.log(cssClassTest);
 	
-	// 1. Toggle 1
-	//cssClassTest ? links.classList.remove('show-links') : links.classList.add('show-links');
-	
-	// 1. Toggle 2
-	links.classList.toggle('show-links');
+	if (!cssClassTest) {
+		links.classList.add('show-links');
+	} else {
+		links.classList.remove('show-links');
+	}
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
