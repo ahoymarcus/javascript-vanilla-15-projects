@@ -31,16 +31,16 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 04 - Imagem do App Navbar para dispositivos grande:
+### Projeto 04 - Imagem do App Navbar para dispositivos grandes:
 
 ![Imagem do App Navbar para dispositivos grande](/public/images/javascript-vanilla-navbar-03.png)
 
 <br />  
 
 
-### Projeto 0 - I:
+### Projeto 05 - Imagem do App Sidebar para dispositivos pequenos:
 
-![Imagem das postagens no Reviews App](/public/images/)
+![Imagem das postagens no Reviews App](/public/images/javascript-vanilla-sidebar-01.png)
 
 <br />  
 

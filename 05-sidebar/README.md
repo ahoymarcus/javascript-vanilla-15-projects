@@ -26,21 +26,11 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App Navbar apresentando no console o teste para a presença de classe CSS que abre o menu:
+### Imagem do App Sidebar apresentando no console o teste para a presença de classe CSS que abre ou fecha o menu lateral:
 
-![Imagem do App Navbar apresentando no console o teste para a presença de classe CSS que abre o menu](/public/images/javascript-vanilla-navbar-01.png)
+![Imagem do App Sidebar apresentando no console o teste para a presença de classe CSS que abre ou fecha o menu lateral](/public/images/javascript-vanilla-sidebar-01.png)
 
-<br />
 
-### Imagem do App Navbar apresentando o menu de Estilo do browser mostrando as classes CSS para o elemento do menu apresentado:
-
-![Imagem do App Navbar apresentando o menu de Estilo do browser mostrando as classes CSS para o elemento do menu apresentado](/public/images/javascript-vanilla-navbar-02.png)
-
-<br />
-
-### Imagem do App Navbar com a tela para dispositivo grande:
-
-![Imagem do App Navbar com a tela para dispositivo grande](/public/images/javascript-vanilla-navbar-03.png)
 
 <br />
 
