@@ -42,7 +42,7 @@ const reviews = [
 ];
 
 // select items
-const img = document.getElementById('img');
+const img = document.getElementById('person-img');
 const author = document.getElementById('author');
 const job = document.getElementById('job');
 const info = document.getElementById('info');
@@ -59,6 +59,13 @@ window.addEventListener('DOMContentLoaded', function() {
 	console.log('Testing DOMContentLoaded Event Listener.....');
 	
 	const item = reviews[currentItem];
+	console.log(item);
+	
+	
+	img.src = item.img;
+	author.textContent = item.name;
+	job.textContent = item.job;
+	info.textContent = item.text;
 });
 
 
