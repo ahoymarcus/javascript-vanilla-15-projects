@@ -45,9 +45,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 0 - I:
+### Projeto 06 - Imagem do App Modal apresentando na tela o elemento modal aberto:
 
-![Imagem das postagens no Reviews App](/public/images/)
+![Imagem do App Modal apresentando na tela o elemento modal aberto](/public/images/javascript-vanilla-modal-02.png)
 
 <br />  
 

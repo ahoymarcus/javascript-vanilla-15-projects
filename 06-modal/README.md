@@ -19,9 +19,17 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App Sidebar apresentando no console o teste para a presença de classe CSS que abre ou fecha o menu lateral:
+### Imagem do App Modal apresentando na tela o botão para a abertura do elemento modal:
 
-![Imagem do App Sidebar apresentando no console o teste para a presença de classe CSS que abre ou fecha o menu lateral](/public/images/javascript-vanilla-sidebar-01.png)
+![Imagem do App Modal apresentando na tela o botão para a abertura do elemento modal](/public/images/javascript-vanilla-modal-01.png)
+
+
+
+<br />
+
+### Imagem do App Modal apresentando na tela o elemento modal aberto:
+
+![Imagem do App Modal apresentando na tela o elemento modal aberto](/public/images/javascript-vanilla-modal-02.png)
 
 
 
