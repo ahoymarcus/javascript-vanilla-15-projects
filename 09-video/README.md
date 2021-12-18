@@ -71,6 +71,82 @@ Finalmente, acima fica, então, o heading H1 que mantém o valor padrão de posi
 
 <br />
 
+Interessante notar no trabalho com o jogo dos 03 botões operando para controlar o vídeo, em que o terceiro é posicionado inicialmente no começo do elemento pai, de modo que ele acaba cobrindo o primeiro botão.
+Contudo, uma vez clicado ele é empurrado a esquerda, cobrindo o segundo botão e apresentando o primeiro:
+
+<br />
+
+```
+.switch-btn span {
+  display: inline-block;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: var(--clr-primary-5);
+}
+.switch {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--clr-primary-5);
+  border-radius: var(--radius);
+  margin: 0;
+  display: block;
+  transition: var(--transition);
+}
+.slide .switch {
+  left: 50%;
+}
+
+```
+
+<br />
+
+Outro ponto interessante do projeto deste app é o uso do Listener 'Load', que é acionado quando toda a página HTML, inclusive seus recursos, como vídeo, já foram totalmente carregados.
+
+<br />
+
+Por default, o preloader é colodado acima de tudo, com o índice de 999, mas que após aquele evento do listener para 'Load', ele é escondido e colocado abaixo de todas as camadas com o índice -999:
+
+<br />
+
+```
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--clr-white);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  transition: var(--transition);
+}
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}
+```
+
+<br />
+
+```
+// preloader
+const preloader = document.querySelector('.preloader');
+
+window.addEventListener('load', function() {
+	preloader.classList.add('hide-preloader');
+});
+```
+
+
+<br />
+
 #### Vanilla Projects (the 15 Projects) -  canal Coding Addict
 
 Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm Smilga** para aprofundar no conhecimento da linguagem.:[^1]
@@ -80,7 +156,7 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 ### Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário:
 
-![Imagem do App Interative Menu apresentando uma seleção de itens de cardápio](/public/images/javascript-vanilla-interative-menu-01.png)
+![Imagem do App Interative Menu apresentando uma seleção de itens de cardápio](/public/images/javascript-vanilla-video-section-01.png)
 
 
 <br />
