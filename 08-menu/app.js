@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 2 hs  24'  40''
+// 3 hs  06'  40''
 const menu = [
   {
     id: 1,
@@ -84,8 +84,8 @@ const menu = [
 ];
 
 const sectionCenter = document.querySelector('.section-center');
+const containerBtns = document.querySelector('.btn-container');
 
-const filterBtns = document.querySelectorAll('.filter-btn');
 
 
 // load items
@@ -102,44 +102,59 @@ window.addEventListener('DOMContentLoaded', function() {
 		['all']
 	);
 	
-	console.log(categories);
+	console.log('Menu categories = ', categories);
+	
+	const categoriesHtmlStr = categories.map(function(category) {
+		return `
+			<button class="filter-btn" type="button" data-id=${category}>
+				${category}
+			</button>
+		`;
+	}).join('');
+	
+	containerBtns.innerHTML = categoriesHtmlStr;
+	
+	/*
+		ATENÇÃO: porque agora os Btns estão sendo inseridos dinamicamento pelo JS, foi preciso relocar para cá a correta referência feita aos elementos.
+	*/
+	const filterBtns = document.querySelectorAll('.filter-btn');
+	displayMenuBtns(filterBtns);
 });
 
 
-// filter items
-filterBtns.forEach(function(btn) {
-	//console.log(btn);
-	
-	btn.addEventListener('click', function(e) {
-		console.log(e.currentTarget);
+
+
+
+// auxiliary functions
+function displayMenuBtns(menuBtns) {
+	menuBtns.forEach(function(btn) {
+		//console.log(btn);
 		
-		// use the 'dataset' object
-		const category = e.currentTarget.dataset.id;
-		console.log(category);
-		
-		let menuCategory = menu.filter(function(item) {
-			if (item.category === category) {
-				return item;
-			} 
+		btn.addEventListener('click', function(e) {
+			console.log(e.currentTarget);
+			
+			// use the 'dataset' object
+			const category = e.currentTarget.dataset.id;
+			console.log(category);
+			
+			let menuCategory = menu.filter(function(item) {
+				if (item.category === category) {
+					return item;
+				} 
+			});
+			
+			if (category === 'all') {
+				displayMenuItems(menu);
+				menuCategory = [...menu];
+			} else {
+				displayMenuItems(menuCategory);
+			}
+			
+			console.log(menuCategory);
 		});
-		
-		if (category === 'all') {
-			displayMenuItems(menu);
-			menuCategory = [...menu];
-		} else {
-			displayMenuItems(menuCategory);
-		}
-		
-		console.log(menuCategory);
 	});
-}) ;
+};
 
-
-
-
-
-
-// auxiliary functoin
 function displayMenuItems(menuItems) {
 	const setMenuArr = menuItems.map(function(item) {
 		return `
