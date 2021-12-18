@@ -80,12 +80,7 @@ const sectionCenter = document.querySelector('.section-center');
 
 
 window.addEventListener('DOMContentLoaded', function() {
-	displayMenuItems(menu);	
-});
-
-
-function displayMenuItems(menuItems) {
-	const setMenuArr = menuItems.map(function(item) {
+	const displayMenuArr = menu.map(function(item) {
 		return `
 			<article class="menu-item">
 				<img src=${item.img} class="photo" alt=${item.title} />
@@ -101,13 +96,15 @@ function displayMenuItems(menuItems) {
 			</article>
 		`;
 	});
-	console.log(setMenuArr);
+	console.log(displayMenuArr);
 	
-	const setMenuStr = setMenuArr.join('');
-	console.log(setMenuStr);
+	const displayMenuStr = displayMenuArr.join('');
+	console.log(displayMenuStr);
 	
-	sectionCenter.innerHTML = setMenuStr;
-};
+	sectionCenter.innerHTML = displayMenuStr;
+	
+	
+});
 
 
 
