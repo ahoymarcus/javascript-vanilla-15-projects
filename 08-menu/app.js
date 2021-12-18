@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 2 hs  16'  40''
+// 2 hs  24'  40''
 const menu = [
   {
     id: 1,
@@ -74,3 +74,37 @@ const menu = [
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
+
+const sectionCenter = document.querySelector('.section-center');
+
+
+
+window.addEventListener('DOMContentLoaded', function() {
+	const displayMenuArr = menu.map(function(item) {
+		return `
+			<article class="menu-item">
+				<img src=${item.img} class="photo" alt=${item.title} />
+				<div class="item-info">
+					<header>
+						<h4>${item.title}</h4>
+						<h4>${item.price}</h4>
+					</header>
+					<p class="item-text">
+						${item.desc}
+					</p>
+				</div>
+			</article>
+		`;
+	});
+	console.log(displayMenuArr);
+	
+	const displayMenuStr = displayMenuArr.join('');
+	console.log(displayMenuStr);
+	
+});
+
+
+
+
+
+
