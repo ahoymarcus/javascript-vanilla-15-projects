@@ -2,21 +2,71 @@
 
 <br />
 
-Esse pequeno projeto cria um app que renderiza dinamicamente e controla uma página web de Menu, buscando os itens do cardápio em dados presentes num array local. Assim, por meio de referências a elementos internos da página, são criados listeners para por meio da filtragem dos dados poder mostrar a seção do menu escolhida pelo usuário.
+Esse pequeno projeto cria um app que renderiza dinamicamente e controla uma seção vídeo dentro de uma página web. Assim, até esse momento todo o trabalho ocorre do lado HTML e CSS, enquanto que o primeiro posiciona os elementos de vídeo e de heading, e que o segundo cria um efeito de sombreamento por sobre o vídeo para tornar o texto de heading mais nítido.
 
 <br />
 
-Assim, no clique de um botão, dependendo do teste feito pelo app, são inseridos dinamicamente na estrutura HTML os itens corretos. 
+O problema que ocorre aqui e que demanda do JavaScript um socorro para a resolução da questão tem haver com a adição do Overlay que causa o escurecimento da imagem do vídeo, mas que também tornam os controles do vídeo inacessíveis ao usuário. 
 
 <br />
 
-Como nota específica deste app, é usado um listener no objeto Window do browser para garantir que o JavaScript comece a trabalhar depois da página web ter sido carregada.
+- HTML
 
 <br />
 
 ```
-DOMContentLoaded
+<header>
+	<video class="video-container" muted autoplay loop>
+		<source src="./video.mp4" type="video/mp4" />
+	</video>
+	<h1>video project</h1>
+</header>
 ```
+
+<br />
+
+- CSS
+
+<br />
+
+O elmento de vídeo é esticado para cobrir todo o espaço, mas é posicionado no índex -2, para ficar abaixo de toda a camada de elementos:
+
+<br />
+
+```
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+```
+<br />
+
+O elmento de Overlay já é posicionado um índice acima, para ficar no meio das três camadas:
+
+<br />
+
+```
+/* header after */
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+} 
+```
+
+<br />
+
+Finalmente, acima fica, então, o heading H1 que mantém o valor padrão de posicionamento com o índice 1.
 
 
 <br />
