@@ -77,13 +77,45 @@ const menu = [
 
 const sectionCenter = document.querySelector('.section-center');
 
+const filterBtns = document.querySelectorAll('.filter-btn');
 
 
+// load items
 window.addEventListener('DOMContentLoaded', function() {
 	displayMenuItems(menu);	
 });
 
 
+// filter items
+filterBtns.forEach(function(btn) {
+	console.log(btn);
+	
+	btn.addEventListener('click', function(e) {
+		console.log(e.currentTarget);
+		//console.log(typeof e.currentTarget.textContent);
+		//console.log(e.currentTarget.textContent);
+		
+		// use the 'dataset' object
+		const filterTerm = e.currentTarget.dataset;
+		console.log(filterTerm);
+		
+		const filteredArr = menu.filter(function(item) {
+			if (item.category === filterTerm.id) {	
+				return item;
+			}
+		}); 
+		console.log(filteredArr);
+		
+		
+	});
+}) ;
+
+
+
+
+
+
+// auxiliary functoin
 function displayMenuItems(menuItems) {
 	const setMenuArr = menuItems.map(function(item) {
 		return `
@@ -104,7 +136,7 @@ function displayMenuItems(menuItems) {
 	console.log(setMenuArr);
 	
 	const setMenuStr = setMenuArr.join('');
-	console.log(setMenuStr);
+	//console.log(setMenuStr);
 	
 	sectionCenter.innerHTML = setMenuStr;
 };
