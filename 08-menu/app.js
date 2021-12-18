@@ -91,7 +91,13 @@ const containerBtns = document.querySelector('.btn-container');
 // load items
 window.addEventListener('DOMContentLoaded', function() {
 	displayMenuItems(menu);	
-	
+	displayMenuBtns();
+});
+
+
+
+// auxiliary functions
+function displayMenuBtns() {
 	// select unique categories
 	const categories = menu.reduce(function(values, item) {
 		if (!values.includes(item.category)) {
@@ -115,19 +121,12 @@ window.addEventListener('DOMContentLoaded', function() {
 	containerBtns.innerHTML = categoriesHtmlStr;
 	
 	/*
-		ATENÇÃO: porque agora os Btns estão sendo inseridos dinamicamento pelo JS, foi preciso relocar para cá a correta referência feita aos elementos.
+		ATENÇÃO: porque agora os Btns estão sendo inseridos dinamicamento pelo JS, foi preciso relocar para cá a correta referência feita aos elementos HTML.
 	*/
 	const filterBtns = document.querySelectorAll('.filter-btn');
-	displayMenuBtns(filterBtns);
-});
-
-
-
-
-
-// auxiliary functions
-function displayMenuBtns(menuBtns) {
-	menuBtns.forEach(function(btn) {
+	
+	// filter items
+	filterBtns.forEach(function(btn) {
 		//console.log(btn);
 		
 		btn.addEventListener('click', function(e) {
