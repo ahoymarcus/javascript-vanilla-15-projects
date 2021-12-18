@@ -88,25 +88,29 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // filter items
 filterBtns.forEach(function(btn) {
-	console.log(btn);
+	//console.log(btn);
 	
 	btn.addEventListener('click', function(e) {
 		console.log(e.currentTarget);
-		//console.log(typeof e.currentTarget.textContent);
-		//console.log(e.currentTarget.textContent);
 		
 		// use the 'dataset' object
-		const filterTerm = e.currentTarget.dataset;
-		console.log(filterTerm);
+		const category = e.currentTarget.dataset.id;
+		console.log(category);
 		
-		const filteredArr = menu.filter(function(item) {
-			if (item.category === filterTerm.id) {	
+		let menuCategory = menu.filter(function(item) {
+			if (item.category === category) {
 				return item;
-			}
-		}); 
-		console.log(filteredArr);
+			} 
+		});
 		
+		if (category === 'all') {
+			displayMenuItems(menu);
+			menuCategory = [...menu];
+		} else {
+			displayMenuItems(menuCategory);
+		}
 		
+		console.log(menuCategory);
 	});
 }) ;
 
@@ -133,7 +137,7 @@ function displayMenuItems(menuItems) {
 			</article>
 		`;
 	});
-	console.log(setMenuArr);
+	//console.log(setMenuArr);
 	
 	const setMenuStr = setMenuArr.join('');
 	//console.log(setMenuStr);
