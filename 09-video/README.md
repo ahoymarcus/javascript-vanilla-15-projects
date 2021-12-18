@@ -156,7 +156,7 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 ### Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário:
 
-![Imagem do App Interative Menu apresentando uma seleção de itens de cardápio](/public/images/javascript-vanilla-video-section-01.png)
+![Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário](/public/images/javascript-vanilla-video-section-01.png)
 
 
 <br />

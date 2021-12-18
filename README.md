@@ -66,9 +66,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 0 - I:
+### Projeto 09 - Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário:
 
-![Imagem das postagens no Reviews App](/public/images/)
+![Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário](/public/images/javascript-vanilla-video-section-01.png)
 
 <br />  
 
