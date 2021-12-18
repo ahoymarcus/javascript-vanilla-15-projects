@@ -52,9 +52,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 0 - I:
+### Projeto 07 - Imagem do App Web Page Questions Section:
 
-![Imagem das postagens no Reviews App](/public/images/)
+![Imagem das postagens no Reviews App](/public/images/javascript-vanilla-questions-section-01.png)
 
 <br />  
 
