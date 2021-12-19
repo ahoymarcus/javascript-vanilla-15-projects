@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 3 hs  05'  40''
+// 3 hs  25'  10''
 
 // Element.getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
 // pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
@@ -68,7 +68,7 @@ window.addEventListener('scroll', function() {
 	
 	const scrollHeight = window.pageYOffset;
 	const navHeight = navbar.getBoundingClientRect().height;
-	console.log(scrollHeight + ' :: ' + navHeight);
+	//console.log(scrollHeight + ' :: ' + navHeight);
 	
 	if (scrollHeight > navHeight) {
 		navbar.classList.add('fixed-nav');
@@ -89,7 +89,29 @@ window.addEventListener('scroll', function() {
 
 // ********** smooth scroll ************
 // select links
+const scrollLinks = document.querySelectorAll('.scroll-link');
 
+
+scrollLinks.forEach(function(link) {
+	link.addEventListener('click', function(e) {
+		// prevent link to act
+		e.preventDefault();
+		
+		// navigate to specific spot
+		// usar slice(1) para despresar o valor # 
+		const id = e.currentTarget.getAttribute('href').slice(1);
+		console.log(id);
+		
+		const elementForNavigation = document.getElementById(id);
+		
+		let navigationPosition = elementForNavigation.offsetTop;
+		window.scrollTo({
+			left: 0,
+			top: navigationPosition,
+		});
+		linksContainer.style.height = 0;
+	});
+});
 
 
 
