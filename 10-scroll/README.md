@@ -2,146 +2,82 @@
 
 <br />
 
-Esse pequeno projeto cria um app que renderiza dinamicamente e controla uma seção vídeo dentro de uma página web. Assim, até esse momento todo o trabalho ocorre do lado HTML e CSS, enquanto que o primeiro posiciona os elementos de vídeo e de heading, e que o segundo cria um efeito de sombreamento por sobre o vídeo para tornar o texto de heading mais nítido.
+Este pequeno, já bem mais complexo dentro da série Vanilla JS Apps cria um app de estudo para testar a funcionalidade de scroll do browser, de modo a aperfeiçoar toda a navegação dos links, corrigindo as variações de tamanho para o elemento Navbar que muda nos diversos tamanhos de tela.
 
 <br />
 
-O problema que ocorre aqui e que demanda do JavaScript um socorro para a resolução da questão tem haver com a adição do Overlay que causa o escurecimento da imagem do vídeo, mas que também tornam os controles do vídeo inacessíveis ao usuário. 
+O problema que ocorre aqui está relacionado tanto com o processo de crescimento, quanto de diminuição do Navbar em função do tamanho do dispositivo, mas também em relação ao seu estado fixo ou não em relação ao posicionamento da tela.
+tudo isso, então, é que deve ser solucionado para a navegação melhorar em termos de UX. 
 
 <br />
 
-- HTML
-
-<br />
-
-```
-<header>
-	<video class="video-container" muted autoplay loop>
-		<source src="./video.mp4" type="video/mp4" />
-	</video>
-	<h1>video project</h1>
-</header>
-```
-
-<br />
-
-- CSS
-
-<br />
-
-O elmento de vídeo é esticado para cobrir todo o espaço, mas é posicionado no índex -2, para ficar abaixo de toda a camada de elementos:
+- Abaixo, parte do script que cuida dos cálculos para ujuste de navegação:
 
 <br />
 
 ```
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-```
-<br />
+/*
+	Calculate the Heights: for that we have to subtract the heights of the navbar (when small screen or the other)
+*/
+const navHeight = navbar.getBoundingClientRect().height;
+const containerHeight = linksContainer.getBoundingClientRect().height;
 
-O elmento de Overlay já é posicionado um índice acima, para ficar no meio das três camadas:
+const isFixedNav = navbar.classList.contains('fixed-nav');
 
-<br />
+let navigationPosition = elementForNavigation.offsetTop - navHeight;
 
-```
-/* header after */
-header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-} 
-```
-
-<br />
-
-Finalmente, acima fica, então, o heading H1 que mantém o valor padrão de posicionamento com o índice 1.
-
-
-<br />
-
-Interessante notar no trabalho com o jogo dos 03 botões operando para controlar o vídeo, em que o terceiro é posicionado inicialmente no começo do elemento pai, de modo que ele acaba cobrindo o primeiro botão.
-Contudo, uma vez clicado ele é empurrado a esquerda, cobrindo o segundo botão e apresentando o primeiro:
-
-<br />
-
-```
-.switch-btn span {
-  display: inline-block;
-  font-size: 0.85rem;
-  cursor: pointer;
-  text-transform: capitalize;
-  color: var(--clr-primary-5);
-}
-.switch {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: var(--clr-primary-5);
-  border-radius: var(--radius);
-  margin: 0;
-  display: block;
-  transition: var(--transition);
-}
-.slide .switch {
-  left: 50%;
+if (!isFixedNav) {
+	navigationPosition = navigationPosition - navHeight;
 }
 
-```
-
-<br />
-
-Outro ponto interessante do projeto deste app é o uso do Listener 'Load', que é acionado quando toda a página HTML, inclusive seus recursos, como vídeo, já foram totalmente carregados.
-
-<br />
-
-Por default, o preloader é colodado acima de tudo, com o índice de 999, mas que após aquele evento do listener para 'Load', ele é escondido e colocado abaixo de todas as camadas com o índice -999:
-
-<br />
-
-```
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--clr-white);
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  visibility: visible;
-  z-index: 999;
-  transition: var(--transition);
+/*
+	Em dispositivo pequeno, nós lidamos tanto com o navHeight (que já foi subtraído), quanto o height de containerHeight.....
+*/
+if (navHeight > 82) { 
+	navigationPosition = navigationPosition + containerHeight;
 }
-.hide-preloader {
-  z-index: -999;
-  visibility: hidden;
-}
-```
 
-<br />
-
-```
-// preloader
-const preloader = document.querySelector('.preloader');
-
-window.addEventListener('load', function() {
-	preloader.classList.add('hide-preloader');
+window.scrollTo({
+	left: 0,
+	top: navigationPosition,
 });
+linksContainer.style.height = 0;
+```
+
+<br />
+
+Ademais, este projeto também inclui uma outra funcionalidade para aprimorar a manutenção do app que é o cálculo dinâmico do tamanho do elemento de links de navegação para ajuste automático do tamanho navbar quando aberto. De outra forma, adição ou subtração de links demandam correção manual do 'height' do elemento:
+
+<br />
+
+Abaixo, trecho do script que realiza o acerto descrito acima:
+
+<br />
+
+```
+/*
+	Element.getBoundingClientRect(): retorna o size e position concretos do elemento relativa ao viewport 
+	VEJA que propositalmente este elemento tem Height 0 para ficar escondido, e é por isso que esta solução usa um container para ser setado em 0 e deixar ainda o elmento de interesse com valor de height intacto
+*/
+const containerHeight = linksContainer.getBoundingClientRect();
+console.log('containerHeightcontainerHeight = ', containerHeight);
+
+const linksHeight = links.getBoundingClientRect().height;
+console.log('linksHeight = ', linksHeight);
+
+/*
+	PROBLEMA: estamos aqui alterando os valores CSS com JS de forma inline. E inline styling precede o feito externamente. 
+	Isto vai causar no design que em dispositivo grande, o @media não consiga tirar o valor altera de Height..........
+	A correção está lá no @media com !important:
+	.links-container {
+		height: auto !important;
+	}
+*/	
+if (containerHeight.height === 0) {
+	linksContainer.style.height = `${linksHeight}px`;
+} else {
+	linksContainer.style.height = 0;
+}
 ```
 
 
@@ -154,9 +90,16 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário:
+### Imagem do App Scroll Function em tela grande:
 
-![Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário](/public/images/javascript-vanilla-video-section-01.png)
+![Imagem do App Scroll Function em tela grande](/public/images/javascript-vanilla-scroll-function-01.png)
+
+
+<br />
+
+### Imagem do App Scroll Function em tela pequena:
+
+![Imagem do App Scroll Function em tela pequena](/public/images/javascript-vanilla-scroll-function-02.png)
 
 
 <br />
