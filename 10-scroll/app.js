@@ -59,6 +59,33 @@ navToggle.addEventListener('click', function() {
 
 
 // ********** fixed navbar ************
+const navbar = document.getElementById('nav');
+const topLink = document.querySelector('.top-link');
+
+// pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
+window.addEventListener('scroll', function() {
+	//console.log(window.pageYOffset);
+	
+	const scrollHeight = window.pageYOffset;
+	const navHeight = navbar.getBoundingClientRect().height;
+	console.log(scrollHeight + ' :: ' + navHeight);
+	
+	if (scrollHeight > navHeight) {
+		navbar.classList.add('fixed-nav');
+	} else {
+		navbar.classList.remove('fixed-nav');
+	}
+	
+	if (scrollHeight > 500) {
+		topLink.classList.add('show-link');
+	} else {
+		topLink.classList.remove('show-link');
+	}
+	
+});
+
+
+
 
 // ********** smooth scroll ************
 // select links
