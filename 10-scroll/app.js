@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 3 hs  25'  10''
+// 3 hs  36'  10''
 
 // Element.getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
 // pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
@@ -104,7 +104,27 @@ scrollLinks.forEach(function(link) {
 		
 		const elementForNavigation = document.getElementById(id);
 		
-		let navigationPosition = elementForNavigation.offsetTop;
+		/*
+			Calculate the Heights: for that we have to subtract the heights of the navbar (when small screen or the other)
+		*/
+		const navHeight = navbar.getBoundingClientRect().height;
+		const containerHeight = linksContainer.getBoundingClientRect().height;
+		
+		const isFixedNav = navbar.classList.contains('fixed-nav');
+		
+		let navigationPosition = elementForNavigation.offsetTop - navHeight;
+		
+		if (!isFixedNav) {
+			navigationPosition = navigationPosition - navHeight;
+		}
+		
+		/*
+			Em dispositivo pequeno, nós lidamos tanto com o navHeight (que já foi subtraído), quanto o height de containerHeight.....
+		*/
+		if (navHeight > 82) { 
+			navigationPosition = navigationPosition + containerHeight;
+		}
+		
 		window.scrollTo({
 			left: 0,
 			top: navigationPosition,
