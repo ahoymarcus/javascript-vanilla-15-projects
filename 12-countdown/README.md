@@ -1,4 +1,4 @@
-# Countdown App - JavaScript Vanilla   
+# Countdown Section App - JavaScript Vanilla   
 
 <br />
 
