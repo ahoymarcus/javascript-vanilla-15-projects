@@ -66,9 +66,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 09 - Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário:
+### Projeto 09 - Imagem do App Video Section apresentando a renderização de uma seção HTML de vídeo dentro de uma página web que é contrado com auxílio de JavaScriptavascript:
 
-![Imagem do App Interative Menu apresentando uma seleção de itens de cardápio de acordo com a categoria escolhida pelo usuário](/public/images/)
+![Imagem do App Video Section apresentando a renderização de uma seção HTML de vídeo dentro de uma página web](/public/images/javascript-vanilla-video-section-01.png)
 
 <br />  
 
