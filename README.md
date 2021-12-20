@@ -80,9 +80,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 0 - I:
+### Projeto 11 - Imagem do App Tabs em tela grande:
 
-![Imagem das postagens no Reviews App](/public/images/)
+![Imagem do App Scroll Function em tela grande](/public/images/javascript-vanilla-tab-section-01.png)
 
 <br />  
 

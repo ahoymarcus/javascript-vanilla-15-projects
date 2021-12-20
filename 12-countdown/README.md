@@ -1,11 +1,10 @@
-# Color Flipper App - Vanilla JS  
+# Countdown App - JavaScript Vanilla   
 
 <br />
 
-O projeto utiliza um Envent Listener do JavaScript para monitorar cliques num botao e assim chamar as devidas funções necessárias para fazer a mudança da cor de background do elemento 'body' da página HTML.
+Este pequeno constrói um app para renderizar e controlar uma seção de Tab para uma web page. Dessa forma, por meio de eventos do javascript o conteúdo da seção muda de acordo com o clique de interação do usuário.
 
 <br />
-
 
 #### Vanilla Projects (the 15 Projects) -  canal Coding Addict
 
@@ -14,9 +13,11 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App Color-Flip:
+### Imagem do App Tabs em tela grande:
 
-![Imagem do App Color-Flip](/public/images/javascript-vanilla-color-fliper-01.png)
+![Imagem do App Scroll Function em tela grande](/public/images/javascript-vanilla-tab-section-01.png)
+
+
 
 <br />
 
