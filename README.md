@@ -94,9 +94,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 0 - I:
+### Projeto 13 - Imagem do App lorem Ipsum gerando 02 parágrafos:
 
-![Imagem das postagens no Reviews App](/public/images/)
+![Imagem do App lorem Ipsum](/public/images/javascript-vanilla-lorem-ipsum-01.png)
 
 <br />  
 

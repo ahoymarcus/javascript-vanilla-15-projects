@@ -2,19 +2,12 @@
 
 <br />
 
-Este pequeno constrói um app para renderizar e controlar uma seção de Countdown para uma web page. 
+O projeto recebe dados de um arquivo com um array formado por lorem ipsum que é usado para servir renderizar na tela para o usuário a quantidade de parágrafos passade em formulário.
 
 <br />
 
-O app trabalha com o objeto 'Date' do JavaScript para montar toda a renderização dos valores de tempo em HTML. Ademais, o app também se utiliza desses valores para realizar os cálculos e retornar sempre os valores corrigidos de forma dinamica.
-
-<br />
-
-Como funcionalidades, o app controla automaticamente para que haja um tempo de 10 dias a ser decorrido toda vez que ele se inicia.
-
-<br />
-
-Finalmente, o app usa o método 'setInterval' do JavaScript para controlar de forma automática  renderização dos valores de tempo e por meio de validação o app também é capaz de limpar o intervalo assim que o contador finaliza, substituindo o elemento de countdown por uma mensagem de aviso ao usuário.
+Como funcionalidades gerais, o app permite ler um número de um elemento de formulário para usálo para definir o retorno de lorem ipsum.
+Ademais, o app valida os valores passados pelo formulário aceitando valores positivos e valores no limite do tamanho do array de dados.
 
 <br />
 
@@ -25,17 +18,11 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App Countdown em tela grande:
+### Imagem do App lorem Ipsum gerando 02 parágrafos:
 
-![Imagem do App Countdown em tela grande](/public/images/javascript-vanilla-countdown-section-01.png)
+![Imagem do App lorem Ipsum](/public/images/javascript-vanilla-lorem-ipsum-01.png)
 
 
-
-<br />
-
-### Imagem do App Countdown com o intervalo de tempo finalizado:
-
-![Imagem do App Countdown em tela grande](/public/images/javascript-vanilla-countdown-section-02.png)
 
 
 
