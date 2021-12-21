@@ -35,7 +35,7 @@ const timeBits = document.querySelectorAll('.deadline-format h4');
 	-> Params
 	year, month, day, minutes, seconds, milliseconds
 */
-let futureDate = new Date(2021, 12, 25, 0, 0, 0);
+let futureDate = new Date(2021, 11, 25, 23, 59, 0);
 console.log(futureDate);
 
 // the easy picks
@@ -76,14 +76,39 @@ const futureTime = futureDate.getTime();
 console.log('Time in milliseconds = ', futureTime);
 
 
-function getRemainingTime() {
+/*
+	Understanding the time in milliseconds
+	-> 1s = 1000ms
+	-> 1m = 60s
+	-> 1hr = 60min
+	-> 1d = 24hr
+*/
+function getRemainingTimeAndRenderHtml() {
 	const today = new Date().getTime();
 	console.log(today);
 	
 	const t = futureTime - today;
 	console.log(t);
+	
+	// values in ms
+	const oneDay = 24 * 60 * 60 * 1000;
+	const oneHour = 60 * 60 * 1000;
+	const oneMinute = 60 * 1000;
+	
+	// calculate value
+	let days = Math.floor(t / oneDay);
+	let hours = Math.floor((t % oneDay) / oneHour);
+	let minutes = Math.floor((t % oneHour) / oneMinute);
+	let seconds = Math.floor((t % oneMinute) / 1000);
+	
+	// set values array
+	const values = [days, hours, minutes, seconds];
+	
+	timeBits.forEach(function(timeBit, index) {
+		timeBit.innerHTML = values[index];
+	});
 };
 
-getRemainingTime();
+getRemainingTimeAndRenderHtml();
 
 
