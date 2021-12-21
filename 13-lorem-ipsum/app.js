@@ -15,11 +15,38 @@ I just told you! You've killed me! Fry! Quit doing the right thing, you jerk! Mi
 ];
 
 
+const form = document.querySelector('.lorem-form');
+const input = document.querySelector('#amount');
+const submitBtn = document.querySelector('.btn');
+
+const articleContainer = document.querySelector('.lorem-text');
 
 
 
+form.addEventListener('submit', function(e) {
+	e.preventDefault();
 
-
+	const value = parseInt(input.value);
+	console.log(value);
+	console.log(typeof value);
+	
+	let loremIpsum = '';
+	
+	if (value && value < text.length) {
+		
+		for (let i=0; i < value; i++) {
+			loremIpsum += `
+				<p>${text[i]}</p>
+			`;
+		}		
+	} else {
+		loremIpsum = `${text[0]}`;
+	}
+	
+	console.log(loremIpsum);
+	
+	articleContainer.innerHTML = loremIpsum;
+});
 
 
 
