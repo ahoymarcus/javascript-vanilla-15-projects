@@ -35,7 +35,7 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 ### Imagem do App Countdown com o intervalo de tempo finalizado:
 
-![Imagem do App Countdown em tela grande](/public/images/javascript-vanilla-countdown-section-02.png)
+![Imagem do App Countdown com o intervalo de tempo finalizado](/public/images/javascript-vanilla-countdown-section-02.png)
 
 
 

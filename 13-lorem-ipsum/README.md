@@ -1,11 +1,22 @@
-# Color Flipper App - Vanilla JS  
+# Lorem Ipsum App - JavaScript Vanilla   
 
 <br />
 
-O projeto utiliza um Envent Listener do JavaScript para monitorar cliques num botao e assim chamar as devidas funções necessárias para fazer a mudança da cor de background do elemento 'body' da página HTML.
+Este pequeno constrói um app para renderizar e controlar uma seção de Countdown para uma web page. 
 
 <br />
 
+O app trabalha com o objeto 'Date' do JavaScript para montar toda a renderização dos valores de tempo em HTML. Ademais, o app também se utiliza desses valores para realizar os cálculos e retornar sempre os valores corrigidos de forma dinamica.
+
+<br />
+
+Como funcionalidades, o app controla automaticamente para que haja um tempo de 10 dias a ser decorrido toda vez que ele se inicia.
+
+<br />
+
+Finalmente, o app usa o método 'setInterval' do JavaScript para controlar de forma automática  renderização dos valores de tempo e por meio de validação o app também é capaz de limpar o intervalo assim que o contador finaliza, substituindo o elemento de countdown por uma mensagem de aviso ao usuário.
+
+<br />
 
 #### Vanilla Projects (the 15 Projects) -  canal Coding Addict
 
@@ -14,9 +25,19 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App Color-Flip:
+### Imagem do App Countdown em tela grande:
 
-![Imagem do App Color-Flip](/public/images/javascript-vanilla-color-fliper-01.png)
+![Imagem do App Countdown em tela grande](/public/images/javascript-vanilla-countdown-section-01.png)
+
+
+
+<br />
+
+### Imagem do App Countdown com o intervalo de tempo finalizado:
+
+![Imagem do App Countdown em tela grande](/public/images/javascript-vanilla-countdown-section-02.png)
+
+
 
 <br />
 
