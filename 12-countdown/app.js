@@ -31,12 +31,18 @@ const timeBits = document.querySelectorAll('.deadline-format h4');
 
 
 /*
-	Careful, because month param is 0 indexed...
 	-> Params
 	year, month, day, minutes, seconds, milliseconds
 */
-let futureDate = new Date(2021, 11, 20, 21, 53, 40);
-console.log(futureDate);
+//let futureDate = new Date(2021, 11, 20, 22, 7, 30);
+//console.log(futureDate);
+
+let tempDate = new Date();
+let tempYear = tempDate.getFullYear();
+let tempMonth = tempDate.getMonth();
+let tempDay = tempDate.getDate();
+
+const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
 
 // the easy picks
 const year = futureDate.getFullYear();
@@ -44,6 +50,7 @@ const hours = futureDate.getHours();
 let minutes = futureDate.getMinutes();
 
 // the hard picks
+// Careful, because month param is 0 indexed...
 const monthIndex = futureDate.getMonth();
 console.log('Watch out wrong month = ', monthIndex);
 console.log(`The correct month is ${monthIndex} + 1 = ${months[monthIndex]}`);
@@ -117,7 +124,7 @@ function getRemainingTimeAndRenderHtml() {
 	
 	if (t < 0) {
 		clearInterval(countdown);
-		deadlineContainer.innerHTML = `<h4 class="expired">sorry, this giveaway has expired</h4>`;
+		deadlineContainer.innerHTML = `<h4 class="expired" style="color: orangered;">sorry, this giveaway has expired</h4>`;
 	}
 };
 
