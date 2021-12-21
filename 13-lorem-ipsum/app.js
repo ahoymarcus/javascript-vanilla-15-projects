@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 5 hs  56'  40''
+// 6 hs  05'  40''
 // lorem text
 const text = [
   `Jelly sweet roll jelly beans biscuit pie macaroon chocolate donut. Carrot cake caramels pie sweet apple pie tiramisu carrot cake. Marzipan marshmallow croissant tootsie roll lollipop. Cupcake lemon drops bear claw gummies. Jelly bear claw gummi bears lollipop cotton candy gummi bears chocolate bar cake cookie. Cupcake muffin danish muffin cookie gummies. Jelly beans tiramisu pudding. Toffee soufflé chocolate cake pastry brownie. Oat cake halvah sweet roll cotton candy croissant lollipop. Macaroon tiramisu chocolate bar candy candy carrot cake jelly sweet. Gummies croissant macaroon dessert. Chocolate cake dragée pie.`,
@@ -31,16 +31,22 @@ form.addEventListener('submit', function(e) {
 	console.log(typeof value);
 	
 	let loremIpsum = '';
+	const randomNumber = Math.floor(Math.random() * text.length);
 	
-	if (value && value < text.length) {
+	// empty
+	// value < 0  
+	// value > arr.length - 1
+	// ou
+	// (isNaN(value) || value < 0 || value > 9)
+	if (value && value > 1 && value <= text.length) {
 		
 		for (let i=0; i < value; i++) {
 			loremIpsum += `
-				<p>${text[i]}</p>
+				<p class="result">${text[i]}</p>
 			`;
 		}		
 	} else {
-		loremIpsum = `${text[0]}`;
+		loremIpsum = `<p class="result">${text[randomNumber]}</p>`;
 	}
 	
 	console.log(loremIpsum);
