@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 5 hs  24'  30''
+// 5 hs  45'  30''
 const months = [
   "January",
   "February",
@@ -35,7 +35,7 @@ const timeBits = document.querySelectorAll('.deadline-format h4');
 	-> Params
 	year, month, day, minutes, seconds, milliseconds
 */
-let futureDate = new Date(2021, 11, 25, 23, 59, 0);
+let futureDate = new Date(2021, 11, 20, 21, 53, 40);
 console.log(futureDate);
 
 // the easy picks
@@ -104,11 +104,30 @@ function getRemainingTimeAndRenderHtml() {
 	// set values array
 	const values = [days, hours, minutes, seconds];
 	
+	// format the timteBits
+	function formatTimeBits(value) {
+		if (value < 10) return value = `0${value}`;
+		
+		return value;
+	};
+	
 	timeBits.forEach(function(timeBit, index) {
-		timeBit.innerHTML = values[index];
+		timeBit.innerHTML = formatTimeBits(values[index]);
 	});
+	
+	if (t < 0) {
+		clearInterval(countdown);
+		deadlineContainer.innerHTML = `<h4 class="expired">sorry, this giveaway has expired</h4>`;
+	}
 };
 
+
+// countdown
+let countdown = setInterval(getRemainingTimeAndRenderHtml, 1000);
+
+/*
+	Atention: as setInterval is assincronous, withou this starting function bellow, we you be printing the HTML's hardcoded value.....
+*/
 getRemainingTimeAndRenderHtml();
 
 
