@@ -34,7 +34,7 @@ const timeBits = document.querySelectorAll('.deadline-format h4');
 	-> Params
 	year, month, day, minutes, seconds, milliseconds
 */
-//let futureDate = new Date(2021, 11, 20, 22, 7, 30);
+let futureDate = new Date(2021, 11, 20, 22, 19, 25);
 //console.log(futureDate);
 
 let tempDate = new Date();
@@ -42,7 +42,7 @@ let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
 let tempDay = tempDate.getDate();
 
-const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
+//const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
 
 // the easy picks
 const year = futureDate.getFullYear();
