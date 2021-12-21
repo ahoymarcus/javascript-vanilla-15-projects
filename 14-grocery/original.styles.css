@@ -1,5 +1,12 @@
 /*
 =============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
 Variables
 ===============
 */
@@ -11,7 +18,7 @@ Variables
   --clr-primary-3: hsl(205, 72%, 37%);
   --clr-primary-4: hsl(205, 63%, 48%);
   /* primary/main color */
-  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-5: #49a6e9;
   /* lighter shades of primary color */
   --clr-primary-6: hsl(205, 89%, 70%);
   --clr-primary-7: hsl(205, 90%, 76%);
@@ -36,9 +43,11 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
-  --spacing: 0.1rem;
-  --radius: 0.25rem;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
@@ -58,9 +67,8 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: hsl(14deg 94% 60% / 62%); /*var(--clr-grey-10);*/
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -71,6 +79,13 @@ ul {
 a {
   text-decoration: none;
 }
+img:not(.logo) {
+  width: 100%;
+}
+img {
+  display: block;
+}
+
 h1,
 h2,
 h3,
@@ -79,6 +94,7 @@ h4 {
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
 }
 h1 {
   font-size: 3rem;
@@ -119,10 +135,7 @@ p {
     line-height: 1;
   }
 }
-
-input {
-	padding: 6px;
-}
+/*  global classes */
 
 .btn {
   text-transform: uppercase;
@@ -206,10 +219,10 @@ Grocery List
   display: flex;
   justify-content: center;
 }
-.grocery {
+#grocery {
   padding: 0.25rem;
   padding-left: 1rem;
-  background: hsl(210deg 7% 86%); /*var(--clr-grey-10);*/
+  background: var(--clr-grey-10);
   border-top-left-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
   border-color: transparent;
@@ -217,7 +230,7 @@ Grocery List
   flex: 1 0 auto;
   color: var(--clr-grey-5);
 }
-.grocery::placeholder {
+#grocery::placeholder {
   font-family: var(--ff-secondary);
   color: var(--clr-grey-5);
 }
@@ -244,10 +257,12 @@ Grocery List
 
 .grocery-container {
   margin-top: 2rem;
-	transition: var(--transition);
-	visibility: hidden; 
+  transition: var(--transition);
+  visibility: hidden;
 }
-
+.show-container {
+  visibility: visible;
+}
 .grocery-item {
   display: flex;
   align-items: center;
