@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 7 hs  12'  00''
+// 7 hs  31'  00''
 
 // ****** SELECT ITEMS **********
 const alert = document.querySelector('.alert');
@@ -80,7 +80,16 @@ function addItem(e) {
 		setBackToDefault();
 		
 	} else if (value && editFlag) {
-		console.log('editing.....')
+		console.log('editing.....');
+		
+		editElement.innerHTML = value;
+		displayAlert('value changed', 'success');
+		editLocalStorage(editID, value);
+		
+		/*
+			Atention: this one has to be the last, because local storage will need de editID
+		*/
+		setBackToDefault();
 	} else {
 		console.log('empty value');
 		
@@ -146,14 +155,14 @@ function editItem(e) {
 	const editedGroceryItem = e.currentTarget.parentElement.parentElement;
 	
 	// set edit item (reaching the title text)
-	const editGroceryItemTitle = e.currentTarget.parentElement.previousElementSibling;
+	editElement = e.currentTarget.parentElement.previousElementSibling;
 	
 	/*
 		Atention: set input form value
 		see how it is the opposite 
 		of getting the value
 	*/
-	groceryInput.value = editGroceryItemTitle.innerHTML;
+	groceryInput.value = editElement.innerHTML;
 	
 	editFlag = true;
 	editID = editedGroceryItem.dataset.id;
@@ -179,6 +188,8 @@ function addToLocalStorage(id, value) {
 function removeFromLocalStorage(id) {
 	
 };
+
+function editLocalStorage(id, value) {}
 
 // ****** SETUP ITEMS **********
 
