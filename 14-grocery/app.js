@@ -84,7 +84,7 @@ function addItem(e) {
 		
 		editElement.innerHTML = value;
 		displayAlert('value changed', 'success');
-		editLocalStorage(editID, value);
+		editLocalStorage(editID, value, 'groceryBudList');
 		
 		/*
 			Atention: this one has to be the last, because local storage will need de editID
@@ -123,7 +123,7 @@ function clearItems() {
 	container.classList.remove('show-container');
 	displayAlert('empty list', 'danger');
 	setBackToDefault();
-	// localStorage.removeItem('list');
+	localStorage.removeItem('groceryBudList');
 }
 
 // delete function
@@ -214,7 +214,19 @@ function removeFromLocalStorage(id, listKey) {
 	localStorage.setItem(listKey, JSON.stringify(storageItems));
 };
 
-function editLocalStorage(id, value) {}
+function editLocalStorage(id, value, listKey) {
+	let storageItems = getLocalStorageList(listKey);
+	
+	storageItems = storageItems.map(function(item) {
+		if (item.id === id) {
+			item.value = value;
+		}
+		
+		return item;
+	});
+	
+	localStorage.setItem(listKey, JSON.stringify(storageItems));
+}
 
 
 function getLocalStorageList(listKey) {
