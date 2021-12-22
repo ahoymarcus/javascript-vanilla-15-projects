@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 6 hs  26'  30''
+// 6 hs  46'  00''
 
 // ****** SELECT ITEMS **********
 const alert = document.querySelector('.alert');
@@ -34,6 +34,40 @@ function addItem(e) {
 	
 	if (value && !editFlag) {
 		console.log('adding to the list.....');
+		
+		const groceryItem = document.createElement('article');
+		
+		// add class
+		groceryItem.classList.add('grocery-item');
+		// add id
+		const attr = document.createAttribute('data-id');
+		attr.value = id;
+		groceryItem.setAttributeNode(attr);
+		
+		groceryItem.innerHTML = `
+			<p class="title">${value}</p>
+			<div class="btn-container">
+				<button type="button" class="edit-btn">
+					<i class="fas fa-edit"></i>
+				</button>
+				<button type="button" class="delete-btn">
+					<i class="fas fa-trash"></i>
+				</button>
+			</div>
+		`;
+		// append child and display message
+		list.appendChild(groceryItem);
+		displayAlert('item added to the list', 'success');
+		
+		// show container
+		container.classList.add('show-container');
+		
+		// add to local storage
+		addToLocalStorage(id, value);
+		
+		// set back to default
+		setBackToDefault();
+		
 	} else if (value && editFlag) {
 		console.log('editing.....')
 	} else {
@@ -56,6 +90,16 @@ function displayAlert(text, action) {
 	}, 3000);
 }
 
+
+// set back to default
+function setBackToDefault() {
+	console.log("set back to default");
+};
+
 // ****** LOCAL STORAGE **********
+function addToLocalStorage(id, value) {
+	console.log('added to local storage');
+}
+
 
 // ****** SETUP ITEMS **********
