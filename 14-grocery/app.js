@@ -118,8 +118,25 @@ function clearItems() {
 }
 
 // delete function
-function deleteItem() {
+function deleteItem(e) {
 	console.log('item deleted');
+	
+	const deletedGroceryItem = e.currentTarget.parentElement.parentElement;
+	const id = deletedGroceryItem.dataset.id;
+	
+	list.removeChild(deletedGroceryItem);
+	console.log('grocery-list length = ', list);
+	console.log(list.children.length);
+	
+	if (list.children.length === 0) {
+		container.classList.remove('show-container');
+	}
+	
+	displayAlert('item removed', 'danger');
+	setBackToDefault();
+	
+	// remove from local storage
+	// removeFromLocalStorage(id);
 };
 
 // edit function
@@ -142,6 +159,9 @@ function addToLocalStorage(id, value) {
 	console.log('added to local storage');
 };
 
+function removeFromLocalStorage(id) {
+	
+};
 
 // ****** SETUP ITEMS **********
 
