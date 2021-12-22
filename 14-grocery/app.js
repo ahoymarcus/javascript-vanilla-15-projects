@@ -140,8 +140,25 @@ function deleteItem(e) {
 };
 
 // edit function
-function editItem() {
+function editItem(e) {
 	console.log('edited item');
+	
+	const editedGroceryItem = e.currentTarget.parentElement.parentElement;
+	
+	// set edit item (reaching the title text)
+	const editGroceryItemTitle = e.currentTarget.parentElement.previousElementSibling;
+	
+	/*
+		Atention: set input form value
+		see how it is the opposite 
+		of getting the value
+	*/
+	groceryInput.value = editGroceryItemTitle.innerHTML;
+	
+	editFlag = true;
+	editID = editedGroceryItem.dataset.id;
+	submitBtn.textContent = 'edit';
+	
 };
 
 // set back to default
