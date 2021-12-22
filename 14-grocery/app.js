@@ -74,7 +74,7 @@ function addItem(e) {
 		container.classList.add('show-container');
 		
 		// add to local storage
-		addToLocalStorage(id, value);
+		addToLocalStorage(id, value, 'groceryBudList');
 		
 		// set back to default
 		setBackToDefault();
@@ -145,7 +145,7 @@ function deleteItem(e) {
 	setBackToDefault();
 	
 	// remove from local storage
-	// removeFromLocalStorage(id);
+	removeFromLocalStorage(id, 'groceryBudList');
 };
 
 // edit function
@@ -190,22 +190,36 @@ function setBackToDefault() {
 	And for other values we can use JSON.stringify():
 	JSON.stringify(['item1', 'item2'])
 */
-function addToLocalStorage(id, value) {
+function addToLocalStorage(id, value, listKey) {
 	console.log('added to local storage.....');
 	
 	const savedItem = { id, value };
-	let storageItems = localStorage.getItem('groceryBudList') ? JSON.parse(localStorage.getItem('groceryBudList')): [];
+	let storageItems = getLocalStorageList(listKey);
 	console.log(storageItems);
 	
 	storageItems.push(savedItem);
 	localStorage.setItem('groceryBudList', JSON.stringify(storageItems));
 };
 
-function removeFromLocalStorage(id) {
+function removeFromLocalStorage(id, listKey) {
+	let storageItems = getLocalStorageList(listKey);
 	
+	storageItems = storageItems.filter(function(item) {
+		if (item.id !== id) {
+			return item;
+		}	
+	});
+	console.log(storageItems);
+	
+	localStorage.setItem(listKey, JSON.stringify(storageItems));
 };
 
 function editLocalStorage(id, value) {}
+
+
+function getLocalStorageList(listKey) {
+	return localStorage.getItem(listKey) ? JSON.parse(localStorage.getItem(listKey)): [];
+};
 
 // ****** SETUP ITEMS **********
 
