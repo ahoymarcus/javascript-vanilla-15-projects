@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 7 hs  44'  00''
+// 8 hs  01'  00''
 
 // ****** SELECT ITEMS **********
 const alert = document.querySelector('.alert');
@@ -9,6 +9,9 @@ const submitBtn = document.querySelector('.submit-btn');
 const container = document.querySelector('.grocery-container');
 const list = document.querySelector('.grocery-list');
 const clearBtn = document.querySelector('.clear-btn');
+
+// local storage key
+const listKey = 'groceryBudList'; 
 
 // edit option
 let editElement;
@@ -21,6 +24,9 @@ form.addEventListener('submit', addItem);
 
 // clear itens
 clearBtn.addEventListener('click', clearItems);
+
+// load items from local storage
+window.addEventListener('DOMContentLoaded', setupItems);
 
 // ****** FUNCTIONS **********
 function addItem(e) {
@@ -36,45 +42,16 @@ function addItem(e) {
 	if (value && !editFlag) {
 		console.log('adding to the list.....');
 		
-		const groceryItem = document.createElement('article');
+		createListitem(id, value);
 		
-		// add class
-		groceryItem.classList.add('grocery-item');
-		// add id
-		const attr = document.createAttribute('data-id');
-		attr.value = id;
-		groceryItem.setAttributeNode(attr);
-		
-		groceryItem.innerHTML = `
-			<p class="title">${value}</p>
-			<div class="btn-container">
-				<button type="button" class="edit-btn">
-					<i class="fas fa-edit"></i>
-				</button>
-				<button type="button" class="delete-btn">
-					<i class="fas fa-trash"></i>
-				</button>
-			</div>
-		`;
-		
-		/*
-			ATENTION: to insert listeners to the edit-btn and delete-btn, THIS is the moment we have access to them, since they are not created at the beggining.
-			Another possibility would be to target the Parent Element -> grocery-list and through the Bubbling Event use validation to select only the intended buttons.
-		*/
-		const deleteBtn = groceryItem.querySelector('.delete-btn');
-		const editBtn = groceryItem.querySelector('.edit-btn');
-		deleteBtn.addEventListener('click', deleteItem);
-		editBtn.addEventListener('click', editItem);
-		
-		// append child and display message
-		list.appendChild(groceryItem);
+		// display message
 		displayAlert('item added to the list', 'success');
 		
 		// show container
 		container.classList.add('show-container');
 		
 		// add to local storage
-		addToLocalStorage(id, value, 'groceryBudList');
+		addToLocalStorage(id, value, listKey);
 		
 		// set back to default
 		setBackToDefault();
@@ -84,7 +61,7 @@ function addItem(e) {
 		
 		editElement.innerHTML = value;
 		displayAlert('value changed', 'success');
-		editLocalStorage(editID, value, 'groceryBudList');
+		editLocalStorage(editID, value, listKey);
 		
 		/*
 			Atention: this one has to be the last, because local storage will need de editID
@@ -123,7 +100,7 @@ function clearItems() {
 	container.classList.remove('show-container');
 	displayAlert('empty list', 'danger');
 	setBackToDefault();
-	localStorage.removeItem('groceryBudList');
+	localStorage.removeItem(listKey);
 }
 
 // delete function
@@ -145,7 +122,7 @@ function deleteItem(e) {
 	setBackToDefault();
 	
 	// remove from local storage
-	removeFromLocalStorage(id, 'groceryBudList');
+	removeFromLocalStorage(id, listKey);
 };
 
 // edit function
@@ -198,7 +175,7 @@ function addToLocalStorage(id, value, listKey) {
 	console.log(storageItems);
 	
 	storageItems.push(savedItem);
-	localStorage.setItem('groceryBudList', JSON.stringify(storageItems));
+	localStorage.setItem(listKey, JSON.stringify(storageItems));
 };
 
 function removeFromLocalStorage(id, listKey) {
@@ -234,9 +211,53 @@ function getLocalStorageList(listKey) {
 };
 
 // ****** SETUP ITEMS **********
+function setupItems() {
+	const storageItems = getLocalStorageList(listKey);
+	
+	if (storageItems.length > 0) {
+		storageItems.forEach(function(item) {
+			createListitem(item.id, item.value);
+		});
+		
+		container.classList.add('show-container');
+	};
+};
 
 
-
+function createListitem(id, value) {
+	const groceryItem = document.createElement('article');
+		
+	// add class
+	groceryItem.classList.add('grocery-item');
+	// add id
+	const attr = document.createAttribute('data-id');
+	attr.value = id;
+	groceryItem.setAttributeNode(attr);
+	
+	groceryItem.innerHTML = `
+		<p class="title">${value}</p>
+		<div class="btn-container">
+			<button type="button" class="edit-btn">
+				<i class="fas fa-edit"></i>
+			</button>
+			<button type="button" class="delete-btn">
+				<i class="fas fa-trash"></i>
+			</button>
+		</div>
+	`;
+	
+	/*
+		ATENTION: to insert listeners to the edit-btn and delete-btn, THIS is the moment we have access to them, since they are not created at the beggining.
+		Another possibility would be to target the Parent Element -> grocery-list and through the Bubbling Event use validation to select only the intended buttons.
+	*/
+	const deleteBtn = groceryItem.querySelector('.delete-btn');
+	const editBtn = groceryItem.querySelector('.edit-btn');
+	deleteBtn.addEventListener('click', deleteItem);
+	editBtn.addEventListener('click', editItem);
+	
+	// append child
+	list.appendChild(groceryItem);
+};
 
 
 
