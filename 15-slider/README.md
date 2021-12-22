@@ -1,4 +1,4 @@
-# Slider App - JavaScript Vanilla   
+# Slider Element App - JavaScript Vanilla   
 
 <br />
 
