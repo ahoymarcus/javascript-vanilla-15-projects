@@ -101,9 +101,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 14 - I:
+### Projeto 14 - Imagem do App Grocery Bud que cria lista de tarefas, permitindo ainda a remoção ou edição dos itens:
 
-![Imagem das postagens no Reviews App](/public/images/)
+![Imagem do App Grocery Bud que cria lista de tarefas](/public/images/javascript-vanilla-grocery-bud-01.png)
 
 <br />  
 

@@ -6,7 +6,7 @@ O projeto constrói um app que renderiza um formulário permitindo ao usuário a
 
 <br />
 
-Especificamente, o app gerencia a existência ou não de dados preexistentes no LocalStorage, definindo a primeira renderização de maneira condicionada a partir daí.
+Especificamente, o app gerencia a existência ou não de dados preexistentes no LocalStorage para serem renderizados na inicialização do app definindo o listener DOMContentLoaded'.
 
 <br />
 
@@ -21,9 +21,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App lorem Ipsum gerando 02 parágrafos:
+### Imagem do App Grocery Bud que cria lista de tarefas, permitindo ainda a remoção ou edição dos itens:
 
-![Imagem do App lorem Ipsum](/public/images/javascript-vanilla-lorem-ipsum-01.png)
+![Imagem do App Grocery Bud que cria lista de tarefas](/public/images/javascript-vanilla-grocery-bud-01.png)
 
 
 
