@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 7 hs  31'  00''
+// 7 hs  44'  00''
 
 // ****** SELECT ITEMS **********
 const alert = document.querySelector('.alert');
@@ -181,8 +181,24 @@ function setBackToDefault() {
 };
 
 // ****** LOCAL STORAGE **********
+/* 
+	LocalStorage API:
+	setItem(strKey, strValue)
+	getItem(strKey)
+	removeItem(strKey)
+	saveItem(strKey, strValue)
+	And for other values we can use JSON.stringify():
+	JSON.stringify(['item1', 'item2'])
+*/
 function addToLocalStorage(id, value) {
-	console.log('added to local storage');
+	console.log('added to local storage.....');
+	
+	const savedItem = { id, value };
+	let storageItems = localStorage.getItem('groceryBudList') ? JSON.parse(localStorage.getItem('groceryBudList')): [];
+	console.log(storageItems);
+	
+	storageItems.push(savedItem);
+	localStorage.setItem('groceryBudList', JSON.stringify(storageItems));
 };
 
 function removeFromLocalStorage(id) {

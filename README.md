@@ -101,7 +101,7 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 0 - I:
+### Projeto 14 - I:
 
 ![Imagem das postagens no Reviews App](/public/images/)
 
