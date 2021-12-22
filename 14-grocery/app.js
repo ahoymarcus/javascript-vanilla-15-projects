@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=c5SIG7Ie0dM
-// 6 hs  46'  00''
+// 7 hs  12'  00''
 
 // ****** SELECT ITEMS **********
 const alert = document.querySelector('.alert');
@@ -56,6 +56,16 @@ function addItem(e) {
 				</button>
 			</div>
 		`;
+		
+		/*
+			ATENTION: to insert listeners to the edit-btn and delete-btn, THIS is the moment we have access to them, since they are not created at the beggining.
+			Another possibility would be to target the Parent Element -> grocery-list and through the Bubbling Event use validation to select only the intended buttons.
+		*/
+		const deleteBtn = groceryItem.querySelector('.delete-btn');
+		const editBtn = groceryItem.querySelector('.edit-btn');
+		deleteBtn.addEventListener('click', deleteItem);
+		editBtn.addEventListener('click', editItem);
+		
 		// append child and display message
 		list.appendChild(groceryItem);
 		displayAlert('item added to the list', 'success');
@@ -107,6 +117,15 @@ function clearItems() {
 	// localStorage.removeItem('list');
 }
 
+// delete function
+function deleteItem() {
+	console.log('item deleted');
+};
+
+// edit function
+function editItem() {
+	console.log('edited item');
+};
 
 // set back to default
 function setBackToDefault() {
