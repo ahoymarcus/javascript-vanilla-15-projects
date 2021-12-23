@@ -110,7 +110,7 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 ### Projeto 15 - Imagem do App Slider mostrando um slide com a possibilidade de seguir para o próximo ou retornar ao anterior:
 
-![Imagem do App Slider mostrando um slide](/public/images/javascript-vanilla-grocery-bud-01.png)
+![Imagem do App Slider mostrando um slide](/public/images/javascript-vanilla-slider-element-01.png)
 
 <br />
 

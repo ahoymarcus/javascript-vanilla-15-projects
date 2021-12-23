@@ -28,7 +28,7 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 ### Imagem do App Slider mostrando um slide com a possibilidade única de retornar aos slides passados:
 
-![Imagem do App Slider mostrando um slide](/public/images/javascript-vanilla-grocery-bud-02.png)
+![Imagem do App Slider mostrando um slide](/public/images/javascript-vanilla-slider-element-02.png)
 
 
 <br />
