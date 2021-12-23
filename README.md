@@ -108,9 +108,9 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 <br />  
 
 
-### Projeto 15 - I:
+### Projeto 15 - Imagem do App Slider mostrando um slide com a possibilidade de seguir para o próximo ou retornar ao anterior:
 
-![Imagem das postagens no Reviews App](/public/images/)
+![Imagem do App Slider mostrando um slide](/public/images/javascript-vanilla-slider-element-01.png)
 
 <br />
 

@@ -6,11 +6,8 @@ O projeto consome dados de um arquivo e renderiza os dados num elemento do tipo 
 
 <br />
 
-Especificamente, o app gerencia a existência ou não de dados preexistentes no LocalStorage para serem renderizados na inicialização do app definindo o listener DOMContentLoaded'.
+Especificamente, o app gerencia a existência de slides à frente ou atrás da progressão no elemento Slider para definir a presença ou o funcionamento geral dos botões de 'Next' e 'Prev'.
 
-<br />
-
-Em especial, além das funções anteriormente citadas, o app emite mensagem de alerta ao usuário confirmando as ações realizadas. Ademais, esses alertas são monitorados para terem duração limitada de tempo na tela.
 
 <br />
 
@@ -21,12 +18,17 @@ Conjunto de projetos JavaScript inspirados na apresentação do professor **Johm
 
 <br />
 
-### Imagem do App Grocery Bud que cria lista de tarefas, permitindo ainda a remoção ou edição dos itens:
+### Imagem do App Slider mostrando um slide com a possibilidade de seguir para o próximo ou retornar ao anterior:
 
-![Imagem do App Grocery Bud que cria lista de tarefas](/public/images/javascript-vanilla-grocery-bud-01.png)
+![Imagem do App Slider mostrando um slide](/public/images/javascript-vanilla-slider-element-01.png)
 
 
+<br />
 
+
+### Imagem do App Slider mostrando um slide com a possibilidade única de retornar aos slides passados:
+
+![Imagem do App Slider mostrando um slide](/public/images/javascript-vanilla-grocery-bud-02.png)
 
 
 <br />
