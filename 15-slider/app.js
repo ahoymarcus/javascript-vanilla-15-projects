@@ -7,12 +7,15 @@ const prevBtn = document.querySelector('.prev-btn');
 
 
 
+prevBtn.style.display = 'none';
+let counter = 0;
+
+
 slides.forEach(function(slide, index) {
 	slide.style.left = `${index * 100}%`;
 });
 
 
-let counter = 0;
 
 nextBtn.addEventListener('click', function() {
 	counter += 1;
@@ -27,13 +30,30 @@ prevBtn.addEventListener('click', function() {
 });
 
 
+
 function carousel() {
 	// first implementation
-	if (counter === slides.length) {
-		counter = 0;
+	// woriking with slides
+	// if (counter === slides.length) {
+		// counter = 0;
+	// }
+	// if (counter < 0) {
+		// counter = slides.length - 1;
+	// }
+	
+	
+	// second implementation 
+	// working with buttons
+	if (counter < slides.length - 1) {
+		nextBtn.style.display = 'block';
+		
+	} else {
+		nextBtn.style.display = 'none';
 	}
-	if (counter < 0) {
-		counter = slides.length - 1;
+	if (counter <= 0) {
+		prevBtn.style.display = 'none';
+	} else {
+		prevBtn.style.display = 'block';
 	}
 	
 	/*
@@ -43,6 +63,8 @@ function carousel() {
 	slides.forEach(function(slide) {
 		slide.style.transform = `translateX(-${counter * 100}%)`;
 	});
+	
+	console.log(counter);
 };
 
 
