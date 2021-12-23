@@ -264,7 +264,12 @@ Slider
     height: 65vh;
   }
 }
-/* .slide:nth-child(1){
+
+
+/*
+	Nestas linhas abaixo temos o controle manual feito pelo CSS para mudar os itens do Slider empurranddo o elemento do slider visulizado para esquerda -> translateX(-100%), etc...
+*/
+/*.slide:nth-child(1){
   left: 0;
 }
 .slide:nth-child(2){
@@ -280,3 +285,6 @@ Slider
   transform: translateX(-100%);
 } */
 /* negative value moves to left */
+
+
+
